@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://email.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[node name="email1" type="Button"]
+
+margin/top = 34.0
+margin/right = 161.0
+margin/bottom = 47.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = false
+flat = false
+script/script = ExtResource( 1 )
+from = "Tad Cooper"
+to = "Nora Jackson"
+subject = "subject"
+message = "message"
+
+

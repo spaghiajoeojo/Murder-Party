@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://db_insert.gd" type="Script" id=1]
+[ext_resource path="res://medium-big.fnt" type="Font" id=2]
+
+[node name="sample" type="WindowDialog"]
+
+margin/left = 260.0
+margin/top = 157.0
+margin/right = 1731.0
+margin/bottom = 910.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = true
+window/title = ""
+script/script = ExtResource( 1 )
+__meta__ = { "_editor_collapsed":true }
+corresponding = "brs97"
+type = "gun"
+
+[node name="RichTextLabel" type="Label" parent="."]
+
+margin/left = 22.0
+margin/top = 36.0
+margin/right = 1452.0
+margin/bottom = 723.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 2 )
+text = "This is a sample. \nInserting its code you will unlock another proof (making it accessible from its code).\nYou can assign its code to a gun and the \"corresponding\" proof to a bullet.\nOr you can assign its code to a known fingerprint and the other code to an unknown one.\n\nTo lock a proof you have to uncheck \"in database\" flag.\n\nExample:\nif this proof will unlock gun-brs97 you have to set \"brs97\" in the \"corresponding\" field and \"gun\" in \"type\" field."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

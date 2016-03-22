@@ -1,0 +1,1206 @@
+[gd_scene load_steps=53 format=1]
+
+[ext_resource path="res://exit.gd" type="Script" id=1]
+[ext_resource path="res://db_icon.png" type="Texture" id=2]
+[ext_resource path="res://email_icon.png" type="Texture" id=3]
+[ext_resource path="res://win_start.png" type="Texture" id=4]
+[ext_resource path="res://win_start.gd" type="Script" id=5]
+[ext_resource path="res://win_start_menu.png" type="Texture" id=6]
+[ext_resource path="res://win_center.png" type="Texture" id=7]
+[ext_resource path="res://win_right.png" type="Texture" id=8]
+[ext_resource path="res://clock.gd" type="Script" id=9]
+[ext_resource path="res://win_net.PNG" type="Texture" id=10]
+[ext_resource path="res://internet.gd" type="Script" id=11]
+[ext_resource path="res://modem.wav" type="Sample" id=12]
+[ext_resource path="res://email_app.gd" type="Script" id=13]
+[ext_resource path="res://email_panel.png" type="Texture" id=14]
+[ext_resource path="res://email.tscn" type="PackedScene" id=15]
+[ext_resource path="res://system.gd" type="Script" id=16]
+[ext_resource path="res://big.fnt" type="Font" id=17]
+[ext_resource path="res://small.fnt" type="Font" id=18]
+[ext_resource path="res://police_logo.png" type="Texture" id=19]
+[ext_resource path="res://prove-small.png" type="Texture" id=20]
+[ext_resource path="res://impronta-small.png" type="Texture" id=21]
+[ext_resource path="res://gun.png" type="Texture" id=22]
+[ext_resource path="res://fingerprints/fingerprint4.png" type="Texture" id=23]
+[ext_resource path="res://fingerprints/fingerprint.png" type="Texture" id=24]
+[ext_resource path="res://fingerprints/fingerprint2.png" type="Texture" id=25]
+[ext_resource path="res://fingerprints/fingerprint3.png" type="Texture" id=26]
+[ext_resource path="res://fingerprints/fingerprint5.png" type="Texture" id=27]
+[ext_resource path="res://142608__autistic-lucario__error.wav" type="Sample" id=28]
+[ext_resource path="res://264762__farpro__guiclick.wav" type="Sample" id=29]
+[ext_resource path="res://db_item.gd" type="Script" id=30]
+[ext_resource path="res://medium-big.fnt" type="Font" id=31]
+[ext_resource path="res://db_insertable.gd" type="Script" id=32]
+[ext_resource path="res://sample.tscn" type="PackedScene" id=33]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "\nextends Button\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\nexport(String) var app\n\nfunc _ready():\n\t# Initialization here\n\tconnect(\"pressed\",self,\"on_pressed\")\n\t\nfunc on_pressed():\n\tfor c in get_parent().get_children():\n\t\tif(c.get_name().find(\"_app\") != -1):\n\t\t\tc.hide()\n\tget_parent().get_node(app).show()\n\n\n"
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="SampleLibrary" id=10]
+
+samples/modem = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
+
+[sub_resource type="GDScript" id=11]
+
+script/source = "\nextends TextureButton\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\n\nfunc _ready():\n\t# Initialization here\n\tconnect(\"pressed\",self,\"pressed\")\n\t\nfunc pressed():\n\tget_parent().get_node(\"Popup\").show()\n\n\n"
+
+[sub_resource type="CanvasItemShaderGraph" id=12]
+
+_code = { "fragment":"vec3 nd1sl0=vec3(0.871094,0.871094,0.871094);\nfloat nd1sl1=1;\nCOLOR.rgb=nd1sl0;\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+_data = { "shaders":[ [ 0, 33, Vector2( 250, 20 ), null, null, [  ] ], [ 0, 33, Vector2( 660, 45 ), null, null, [ 0, 1, 0 ], 1, 3, Vector2( 197, 63 ), Color( 0.871094, 0.871094, 0.871094, 1 ), null, [  ] ], [ 0, 33, Vector2( 250, 20 ), null, null, [  ] ] ] }
+
+[sub_resource type="CanvasItemMaterial" id=13]
+
+shader/shader = SubResource( 12 )
+shader/shading_mode = 0
+
+[sub_resource type="GDScript" id=14]
+
+script/source = "\nextends Label\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\nvar count = 0\n\nfunc add_email():\n\tcount += 1\n\tset_text(\"(\"+str(count)+\")\")\n\n\n"
+
+[sub_resource type="GDScript" id=16]
+
+script/source = "\nextends WindowDialog\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\nvar password\nvar input_text\n\nfunc _ready():\n\t# Initialization here\n\tset_process(true)\n\tinput_text = get_node(\"TextEdit\")\n\t\nfunc _process(delta):\n\t\n\tif(input_text.get_text().length()>5):\n\t\tinput_text.set_text(input_text.get_text().substr(0,5))\n\t\tinput_text.cursor_set_column(5,false)\n\tif(input_text.get_line_count()>1 or Input.is_action_pressed(\"ui_accept\")):\n\t\tvar input = input_text.get_text().replace(\"\\n\",\"\")\n\t\tinput_text.set_text(input)\n\t\tinput_text.cursor_set_column(5,false)\n\t\tif(get_node(\"TextEdit\").get_text() == password or not get_parent().protected):\n\t\t\tget_parent().show_content()\n\t\t\tinput_text.set_text(\"\")\n\t\t\tself.hide()\n\n\n"
+
+[sub_resource type="GDScript" id=17]
+
+script/source = "\nextends Button\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\nvar label\nfunc _ready():\n\t# Initialization here\n\tlabel = get_node(\"Label\")\n\tconnect(\"mouse_enter\",self,\"enter\")\n\tconnect(\"mouse_exit\",self,\"exit\")\n\nfunc enter():\n\tlabel.set(\"visibility/visible\",true)\n\t\nfunc exit():\n\tlabel.set(\"visibility/visible\",false)\n"
+
+[sub_resource type="Animation" id=18]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/ProgressBar:range/value")
+tracks/0/interp = 1
+tracks/0/keys = { "cont":true, "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "values":[ 1.0, 100.0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visibility/visible")
+tracks/1/interp = 1
+tracks/1/keys = { "cont":false, "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "values":[ true, false ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../code_window:visibility/visible")
+tracks/2/interp = 1
+tracks/2/keys = { "cont":false, "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ false ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../to_desktop:disabled")
+tracks/3/interp = 1
+tracks/3/keys = { "cont":false, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ true ] }
+
+[sub_resource type="Animation" id=19]
+
+length = 1.9
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/TextureFrame:texture")
+tracks/0/interp = 1
+tracks/0/keys = { "cont":false, "times":FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "values":[ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 23 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/ProgressBar:range/value")
+tracks/1/interp = 1
+tracks/1/keys = { "cont":true, "times":FloatArray( 0, 1.9 ), "transitions":FloatArray( 1, 1 ), "values":[ 0.0, 100.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visibility/visible")
+tracks/2/interp = 1
+tracks/2/keys = { "cont":false, "times":FloatArray( 0, 1.9 ), "transitions":FloatArray( 1, 1 ), "values":[ true, false ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../to_desktop:disabled")
+tracks/3/interp = 1
+tracks/3/keys = { "cont":false, "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "values":[ true ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("../code_window:visibility/visible")
+tracks/4/interp = 1
+tracks/4/keys = { "cont":false, "times":FloatArray( 1.9 ), "transitions":FloatArray( 1 ), "values":[ false ] }
+
+[sub_resource type="SampleLibrary" id=20]
+
+samples/error = { "db":0.0, "pitch":1.0, "sample":ExtResource( 28 ) }
+samples/ok = { "db":0.0, "pitch":1.0, "sample":ExtResource( 29 ) }
+
+[node name="Desktop" type="Node"]
+
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="police_icon" type="Button" parent="."]
+
+margin/left = 30.0
+margin/top = 116.0
+margin/right = 146.0
+margin/bottom = 256.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+toggle_mode = false
+flat = false
+script/script = SubResource( 4 )
+__meta__ = { "_editor_collapsed":true }
+app = "police_app"
+
+[node name="TextureFrame" type="TextureFrame" parent="police_icon"]
+
+margin/top = 17.0
+margin/right = 35.0
+margin/bottom = 51.0
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="police_icon"]
+
+margin/left = 9.0
+margin/top = 124.0
+margin/right = 103.0
+margin/bottom = 137.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Police Database"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="email_icon" type="Button" parent="."]
+
+margin/left = 32.0
+margin/top = 279.0
+margin/right = 148.0
+margin/bottom = 419.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+toggle_mode = false
+flat = false
+script/script = SubResource( 4 )
+__meta__ = { "_editor_collapsed":true }
+app = "email_app"
+
+[node name="TextureFrame" type="TextureFrame" parent="email_icon"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 5.0
+margin/top = 13.0
+margin/right = 76.0
+margin/bottom = 95.0
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="email_icon"]
+
+margin/left = 9.0
+margin/top = 124.0
+margin/right = 103.0
+margin/bottom = 137.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Email"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="win_bar" type="Control" parent="."]
+
+margin/top = 1024.0
+margin/right = 40.0
+margin/bottom = 1064.0
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="TextureFrame" type="TextureFrame" parent="win_bar"]
+
+margin/right = 59.0
+margin/bottom = 28.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="win_bar/TextureFrame"]
+
+margin/top = 4.0
+margin/right = 57.0
+margin/bottom = 26.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+toggle_mode = false
+flat = false
+script/script = ExtResource( 5 )
+
+[node name="TextureFrame" type="TextureFrame" parent="win_bar/TextureFrame/Button"]
+
+visibility/visible = false
+margin/top = -343.0
+margin/right = 196.0
+margin/bottom = -4.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 6 )
+
+[node name="TextureFrame1" type="TextureFrame" parent="win_bar"]
+
+margin/left = 59.0
+margin/right = 899.0
+margin/bottom = 28.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 7 )
+expand = true
+
+[node name="TextureFrame2" type="TextureFrame" parent="win_bar"]
+
+margin/left = 833.0
+margin/right = 960.0
+margin/bottom = 28.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="win_bar/TextureFrame2"]
+
+margin/left = 68.0
+margin/top = 8.0
+margin/right = 126.0
+margin/bottom = 21.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "23:23:40"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 9 )
+
+[node name="TextureButton" type="TextureButton" parent="win_bar/TextureFrame2"]
+
+margin/left = 6.0
+margin/top = 5.0
+margin/right = 26.4
+margin/bottom = 25.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+textures/normal = ExtResource( 10 )
+params/scale = Vector2( 0.6, 0.6 )
+script/script = ExtResource( 11 )
+
+[node name="internet" type="SamplePlayer" parent="win_bar/TextureFrame2/TextureButton"]
+
+config/polyphony = 1
+config/samples = SubResource( 10 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="Timer" type="Timer" parent="win_bar/TextureFrame2/TextureButton"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="network_error" type="AcceptDialog" parent="."]
+
+visibility/visible = false
+margin/left = 929.0
+margin/top = 514.0
+margin/right = 1050.0
+margin/bottom = 586.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Alert!"
+dialog/text = "NETWORK ERROR!"
+dialog/hide_on_ok = true
+
+[node name="email_app" type="WindowDialog" parent="."]
+
+visibility/visible = false
+margin/left = 458.0
+margin/top = 236.0
+margin/right = 1377.0
+margin/bottom = 751.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Email"
+script/script = ExtResource( 13 )
+__meta__ = { "_editor_collapsed":true }
+protected = false
+password = "jwk34"
+
+[node name="Tool Panel" type="TextureButton" parent="email_app"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/top = -2.0
+margin/bottom = 416.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+textures/normal = ExtResource( 14 )
+params/scale = Vector2( 1.8, 1.8 )
+script/script = SubResource( 11 )
+
+[node name="email_list" type="Panel" parent="email_app"]
+
+material/material = SubResource( 13 )
+margin/left = 1.0
+margin/top = 99.0
+margin/right = 162.0
+margin/bottom = 512.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="email_app/email_list"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Title" type="Label" parent="email_app/email_list/VBoxContainer"]
+
+margin/right = 161.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Email"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="email_app/email_list/VBoxContainer"]
+
+margin/top = 17.0
+margin/right = 161.0
+margin/bottom = 30.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="folder" type="Label" parent="email_app/email_list/VBoxContainer/HBoxContainer"]
+
+margin/right = 54.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "- Inbox"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="email_number" type="Label" parent="email_app/email_list/VBoxContainer/HBoxContainer"]
+
+margin/left = 58.0
+margin/right = 80.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "(13)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 14 )
+
+[node name="email1 2" parent="email_app/email_list/VBoxContainer" instance=ExtResource( 15 )]
+
+subject = "Pizza Monday"
+message = "Let\'s eat a pizza this monday."
+
+[node name="email2" parent="email_app/email_list/VBoxContainer" instance=ExtResource( 15 )]
+
+from = "Another man"
+subject = "Another Email"
+message = "Some text."
+
+[node name="email_viewer" type="Panel" parent="email_app"]
+
+material/material = SubResource( 13 )
+margin/left = 165.0
+margin/top = 99.0
+margin/right = 918.0
+margin/bottom = 512.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="email_app/email_viewer"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="email_app/email_viewer/VBoxContainer"]
+
+margin/right = 1169.0
+margin/bottom = 13.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="from" type="Label" parent="email_app/email_viewer/VBoxContainer/HBoxContainer"]
+
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="to" type="Label" parent="email_app/email_viewer/VBoxContainer/HBoxContainer"]
+
+margin/left = 4.0
+margin/right = 4.0
+margin/bottom = 13.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="subject" type="Label" parent="email_app/email_viewer/VBoxContainer"]
+
+margin/top = 17.0
+margin/right = 1169.0
+margin/bottom = 30.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="separator" type="Label" parent="email_app/email_viewer/VBoxContainer"]
+
+margin/top = 34.0
+margin/right = 1169.0
+margin/bottom = 47.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="message" type="Label" parent="email_app/email_viewer/VBoxContainer"]
+
+margin/top = 51.0
+margin/right = 1169.0
+margin/bottom = 64.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Popup" type="AcceptDialog" parent="email_app"]
+
+visibility/visible = false
+margin/left = 914.0
+margin/top = 520.0
+margin/right = 1098.0
+margin/bottom = 630.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Alert!"
+dialog/hide_on_ok = true
+
+[node name="ERROR" type="Label" parent="email_app/Popup"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 9.0
+margin/right = 8.0
+margin/bottom = 36.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Error:\nSystem not connected."
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="login" type="WindowDialog" parent="email_app"]
+
+visibility/visible = false
+margin/left = 898.0
+margin/top = 351.0
+margin/right = 1082.0
+margin/bottom = 461.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "LOGIN"
+script/script = SubResource( 16 )
+
+[node name="label" type="Label" parent="email_app/login"]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 25.0
+margin/top = -10.0
+margin/right = -8.0
+margin/bottom = 46.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Insert password:"
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextEdit" type="TextEdit" parent="email_app/login"]
+
+margin/left = 25.0
+margin/top = 45.0
+margin/right = 155.0
+margin/bottom = 68.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="police_app" type="Panel" parent="."]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+script/script = ExtResource( 16 )
+__meta__ = { "_editor_collapsed":true }
+
+[node name="help" type="Button" parent="police_app"]
+
+margin/left = 1462.0
+margin/top = 622.0
+margin/right = 1513.0
+margin/bottom = 678.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+toggle_mode = false
+text = "\?"
+flat = false
+script/script = SubResource( 17 )
+
+[node name="Label" type="Label" parent="police_app/help"]
+
+visibility/visible = false
+margin/left = 68.0
+margin/top = -34.0
+margin/right = 358.0
+margin/bottom = 113.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 18 )
+text = "If inserting fingerprints you don\'t get results it is because there are no matches in the database.\n\nTry to insert a sample in first place."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="police_logo" type="TextureFrame" parent="police_app"]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+margin/left = 895.0
+margin/top = 503.0
+margin/right = 303.0
+margin/bottom = -89.0
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 19 )
+expand = true
+
+[node name="police_dept" type="RichTextLabel" parent="police_app"]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+margin/left = 550.0
+margin/top = 411.0
+margin/right = -529.0
+margin/bottom = 214.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/normal_font = ExtResource( 17 )
+bbcode/enabled = true
+bbcode/bbcode = "Police department"
+visible_characters = -1
+
+[node name="main_buttons" type="VBoxContainer" parent="police_app"]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+margin/left = 378.0
+margin/top = 123.0
+margin/right = -482.0
+margin/bottom = -189.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_constants/separation = 25
+alignment = 1
+
+[node name="Button" type="Button" parent="police_app/main_buttons"]
+
+margin/right = 860.0
+margin/bottom = 134.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+toggle_mode = false
+text = "proof analysis"
+icon = ExtResource( 20 )
+flat = false
+
+[node name="Button1" type="Button" parent="police_app/main_buttons"]
+
+margin/top = 159.0
+margin/right = 860.0
+margin/bottom = 293.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+toggle_mode = false
+text = "\nFingerprints analysis"
+icon = ExtResource( 21 )
+flat = false
+
+[node name="Button2" type="Button" parent="police_app/main_buttons"]
+
+margin/top = 318.0
+margin/right = 860.0
+margin/bottom = 452.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+toggle_mode = false
+text = "balistic analysis"
+icon = ExtResource( 22 )
+flat = false
+
+[node name="code_window" type="WindowDialog" parent="police_app"]
+
+visibility/visible = false
+margin/left = 714.0
+margin/top = 395.0
+margin/right = 1236.0
+margin/bottom = 747.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Please insert data"
+
+[node name="form" type="LineEdit" parent="police_app/code_window"]
+
+margin/left = 22.0
+margin/top = 109.0
+margin/right = 503.0
+margin/bottom = 169.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+text = ""
+max_length = 5
+editable = true
+secret = false
+
+[node name="Search" type="Button" parent="police_app/code_window"]
+
+margin/left = 95.0
+margin/top = 259.0
+margin/right = 407.0
+margin/bottom = 326.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+toggle_mode = false
+text = "SEARCH"
+flat = false
+
+[node name="Loading" type="PopupPanel" parent="police_app"]
+
+visibility/visible = false
+margin/left = 814.0
+margin/top = 257.0
+margin/right = 1179.0
+margin/bottom = 407.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+__meta__ = { "_editor_collapsed":true }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="police_app/Loading"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="police_app/Loading/VBoxContainer"]
+
+margin/right = 365.0
+margin/bottom = 50.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 17 )
+text = "LOADING"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ProgressBar" type="ProgressBar" parent="police_app/Loading/VBoxContainer"]
+
+margin/top = 54.0
+margin/right = 365.0
+margin/bottom = 104.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 17 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="police_app/Loading"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/load = SubResource( 18 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="search_digit" type="PopupPanel" parent="police_app"]
+
+visibility/visible = false
+margin/left = 139.0
+margin/top = 194.0
+margin/right = 622.0
+margin/bottom = 834.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="police_app/search_digit"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 1
+
+[node name="TextureFrame" type="TextureFrame" parent="police_app/search_digit/VBoxContainer"]
+
+margin/top = 10.0
+margin/right = 483.0
+margin/bottom = 522.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 23 )
+
+[node name="ProgressBar" type="ProgressBar" parent="police_app/search_digit/VBoxContainer"]
+
+margin/top = 526.0
+margin/right = 483.0
+margin/bottom = 576.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 17 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
+[node name="Label" type="Label" parent="police_app/search_digit/VBoxContainer"]
+
+margin/top = 580.0
+margin/right = 483.0
+margin/bottom = 630.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 17 )
+text = "SEARCHING"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="police_app/search_digit"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/load = SubResource( 18 )
+anims/searching = SubResource( 19 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="to_desktop" type="Button" parent="police_app"]
+
+anchor/left = 1
+anchor/right = 1
+margin/left = 66.0
+margin/top = 12.0
+margin/right = 8.0
+margin/bottom = 70.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+toggle_mode = false
+text = "x"
+flat = false
+
+[node name="search_error" type="AcceptDialog" parent="police_app"]
+
+visibility/visible = false
+margin/left = 873.0
+margin/top = 393.0
+margin/right = 1069.0
+margin/bottom = 532.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Alert!"
+dialog/hide_on_ok = true
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label 2" type="Label" parent="police_app/search_error"]
+
+margin/top = 33.0
+margin/right = 193.0
+margin/bottom = 90.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 18 )
+text = "NO MATCHES"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gui_sound" type="SamplePlayer" parent="police_app"]
+
+config/polyphony = 1
+config/samples = SubResource( 20 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="database" type="Node" parent="police_app"]
+
+[node name="proof-yxr5m" type="WindowDialog" parent="police_app/database"]
+
+visibility/visible = false
+margin/left = 260.0
+margin/top = 157.0
+margin/right = 1731.0
+margin/bottom = 910.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "This is a proof"
+script/script = ExtResource( 30 )
+__meta__ = { "_editor_collapsed":true }
+
+[node name="RichTextLabel" type="Label" parent="police_app/database/proof-yxr5m"]
+
+margin/left = 10.0
+margin/top = 29.0
+margin/right = 1439.0
+margin/bottom = 722.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 31 )
+text = "This is a proof.\n\nIts code is yxr5m, to change it you have to modify its node name."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gun-brs97" type="WindowDialog" parent="police_app/database"]
+
+visibility/visible = false
+margin/left = 260.0
+margin/top = 157.0
+margin/right = 1731.0
+margin/bottom = 910.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = true
+window/title = ""
+script/script = ExtResource( 32 )
+__meta__ = { "_editor_collapsed":true }
+in_database = false
+
+[node name="RichTextLabel" type="Label" parent="police_app/database/gun-brs97"]
+
+margin/left = 21.0
+margin/top = 36.0
+margin/right = 1452.0
+margin/bottom = 723.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 17 )
+text = "This bullet was shot by 6rs8f gun."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gun-6rs8f" parent="police_app/database" instance=ExtResource( 33 )]
+
+visibility/visible = false
+
+[connection signal="pressed" from="police_app/main_buttons/Button" to="police_app" method="_on_Button_pressed"]
+
+[connection signal="pressed" from="police_app/main_buttons/Button1" to="police_app" method="_on_Button1_pressed"]
+
+[connection signal="pressed" from="police_app/main_buttons/Button2" to="police_app" method="_on_Button2_pressed"]
+
+[connection signal="hide" from="police_app/code_window" to="police_app" method="_on_WindowDialog_hide"]
+
+[connection signal="pressed" from="police_app/code_window/Search" to="police_app" method="_on_Search_pressed"]
+
+[connection signal="pressed" from="police_app/to_desktop" to="police_app" method="_on_to_desktop_pressed"]
+
+
